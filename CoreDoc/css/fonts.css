@@ -1,0 +1,12 @@
+@font-face {
+  font-family:"Montserrat-Regular"; 
+  src: local(Montserrat-Regular), url('../fonts/Montserrat-Regular.ttf') format('OpenType');
+}
+@font-face {
+  font-family:"Montserrat-ExtraLight"; 
+  src: local(Montserrat-ExtraLight), url('../fonts/Montserrat-ExtraLight.ttf') format('OpenType');
+}
+@font-face {
+  font-family:"Montserrat-SemiBold"; 
+  src: local(Montserrat-SemiBold), url('../fonts/Montserrat-SemiBold.ttf') format('OpenType');
+}

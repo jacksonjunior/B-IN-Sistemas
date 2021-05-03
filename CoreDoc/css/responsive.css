@@ -1,0 +1,42 @@
+@media (max-width: 575.98px) {
+
+}
+
+@media (max-width: 767.98px) { 
+
+	.navbar, .main {float:none;}
+	.navbar {
+		width:100%;
+		height:auto;
+		display:block;
+		position:relative;
+	}
+	.main {
+		display:block;
+		width:100%;
+	}
+	.breadcrumb {
+		margin-top:0; 
+	}
+	.account {
+		display:none;
+	}
+	.card-actions-float {
+		position:relative;
+		box-shadow:none;
+	}
+	.card-actions-float button {
+		margin-bottom:16px;
+	}
+	.add-filters span {
+	font-size:10px;
+	margin:0 6px 10px 0;
+	}
+
+ }
+
+@media (max-width: 991.98px) { ... }
+
+@media (max-width: 1199.98px) { ... }
+
+@media (max-width: 1399.98px) { ... }

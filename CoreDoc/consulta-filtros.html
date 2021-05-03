@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="#" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css" >
+    <link rel="stylesheet" href="css/fonts.css" >
+    <link rel="stylesheet" href="css/responsive.css" >
+
+    <title>CoreDoc - Consulta de Documentos</title>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+      $(document).ready(function(){
+        $(".filters").hide();
+
+        $(".action-collapse").click(function(){
+          $(".filters").toggle(500);
+          $(".action-collapse").toggleClass("show");
+        });
+      });
+      </script>
+
+
+  </head>
+  <body id="top">
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="img/logo-coredoc.svg"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span><img src="img/icon-search-menu.svg"></span>
+                Consulta
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Ação</a></li>
+                <li><a class="dropdown-item" href="#">Auto de Infração</a></li>
+                <li><a class="dropdown-item" href="#">CoreDoc x CoreForm</a></li>
+                <li><a class="dropdown-item" href="#">Documentação Técnica</a></li>
+                <li><a class="dropdown-item" href="#">Documento</a></li>
+                <li><a class="dropdown-item" href="#">Documento Fax/E-mail Sem Par</a></li>
+                <li><a class="dropdown-item" href="#">Entrega para a ANP</a></li>
+                <li><a class="dropdown-item" href="#">Legislação</a></li>
+                <li><a class="dropdown-item" href="#">Malote</a></li>
+                <li><a class="dropdown-item" href="#">Notícia</a></li>
+                <li><a class="dropdown-item" href="#">Painel de Concessões</a></li>
+                <li><a class="dropdown-item" href="#">Perfil de Usuário</a></li>
+                <li><a class="dropdown-item" href="#">Poço Legal</a></li>
+                <li><a class="dropdown-item" href="#">Processo</a></li>
+                <li><a class="dropdown-item" href="#">Recebidos da ANP</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span><img src="img/icon-cadastro-menu.svg"></span>
+                Cadastro
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Opção 1</a></li>
+                <li><a class="dropdown-item" href="#">Opção 2</a></li>
+                <li><a class="dropdown-item" href="#">Opção 3</a></li>
+              </ul>
+            </li>
+
+            <hr>
+
+            <div class="menu-others">
+              <h3>Mais opções</h3>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><span><img src="img/icon-indicadores-menu.svg"></span> Indicadores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><span><img src="img/icon-admin-menu.svg"></span> Administração</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><span><img src="img/icon-outros-menu.svg"></span> Outros</a>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main">
+      
+      <div class="card-content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Página inicial</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Consulta de documentos</li>
+              </ol>
+            </nav>
+            </div>
+            <div class="col-md-4 account">
+              <div class="avatar">
+                <img src="img/avatar.jpg">
+              </div>
+              <div class="name">
+                Antonio Carlos Barreto Alves de Oliveira
+                <span>Administrador</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card-content">
+        <div class="container-fluid">
+
+            <div class="title-content">
+              <h2>Filtros (5)</h2>
+              <a href="#" class="action-collapse"></a>
+            </div>
+
+
+            <div class="filters row">
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Código Externo</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="01">
+                    <label class="form-check-label" for="01">
+                      Somente pré-cadastrados
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="02">
+                    <label class="form-check-label" for="02">
+                      Apenas assuntos marco
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Descrição</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Assunto</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="03">
+                    <label class="form-check-label" for="03">
+                      Apenas assuntos marco
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Número despacho</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Origem</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Destino</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Não conformidade</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Plano de avaliação</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Bloco</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Campo</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Nome do contrato</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Poço</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Plataforma</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">documento marco</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">SID</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Documento SEI</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Protocolo SEI</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Processo SEI</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <h3>Responsável técnico</h3>
+
+              <div class="col-md-6">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Legislação</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="filter-item">
+                  <div class="mb-3">
+                    <label class="form-label">Técnico</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <h3>Data</h3>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Data do documento</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Data de recebimento CRA</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Data de liberação ANP</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Data de cadastro</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Data de verificação CRA</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Data de protocolo ANP</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Data de envio UN</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Prazo de envio SEI</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Data de envio SEI</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="input-group mb-3">
+                    <label class="form-label">Data SEI informado</label>
+                    <span class="input-group-text"><img src="img/icon-datepicker.svg"></span>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <h3>Coluna de resultados</h3>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="04">
+                    <label class="form-check-label" for="04">
+                      Assunto
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="05">
+                    <label class="form-check-label" for="05">
+                      Data de prazo de envio SEI
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="06">
+                    <label class="form-check-label" for="06">
+                      Destino
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="07">
+                    <label class="form-check-label" for="07">
+                      Código externo
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="08">
+                    <label class="form-check-label" for="08">
+                      Data de recebimento
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="09">
+                    <label class="form-check-label" for="09">
+                      Origem
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="10">
+                    <label class="form-check-label" for="10">
+                      Data do documento
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="11">
+                    <label class="form-check-label" for="11">
+                      Data SEI informado
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="filter-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="12">
+                    <label class="form-check-label" for="12">
+                      Plataforma
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card-content card-actions-float">
+                <button type="button" class="btn btn-link">Voltar para o topo</button>
+               <button type="button" class="btn btn-light">limpar filtro</button>
+               <button type="button" class="btn btn-primary">Pesquisar documentos</button>
+              </div>
+
+
+
+            </div>
+
+
+            <div class="col-12 resume-filters">
+              <h3>Filtros preenchidos:</h3>
+
+              <div class="add-filters">
+                <span class="badge bg-light text-dark">Código externo <a href="#"><img src="img/icon-delete-badge.svg"></a></span> 
+                <span class="badge bg-light text-dark">Nome do contrato <a href="#"><img src="img/icon-delete-badge.svg"></a></span> 
+                <span class="badge bg-light text-dark">Poço <a href="#"><img src="img/icon-delete-badge.svg"></a></span>
+              </div>
+
+              <h3>Critérios de pesquisa:</h3>
+
+              <div class="add-filters">
+                <span class="badge bg-light text-dark">Documento Pré-Cadastrado <a href="#"><img src="img/icon-delete-badge.svg"></a></span> 
+                <span class="badge bg-light text-dark">Documento Pré-Cadastrado para Número de Despacho <a href="#"><img src="img/icon-delete-badge.svg"></a></span>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="container-fluid">
+
+              <div class="title-content">
+                <h2>Resultados</h2>
+              </div>
+
+              <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                  <thead>
+                    <tr>
+                      <th scope="col">Código</th>
+                      <th scope="col">Criado em</th>
+                      <th scope="col">Processo</th>
+                      <th scope="col">Descrição</th>
+                      <th scope="col">Destino</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">B-in PARTNERS<br>00001/21</th>
+                      <td>01/01/0001 <br> 23:43:12</td>
+                      <td>48610</td>
+                      <td>@B-in PARTNERS encaminha NPP - Notificação de Perfuração do Poço 7-SAQ-35-RJS</td>
+                      <td>ANP/SEP</td>
+                      <td><a href="#"><img src="img/icon-delete-table.svg"></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+                </ul>
+              </nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
